@@ -100,7 +100,7 @@ public class EgovSampleController {
 		paginationInfo.setTotalRecordCount(totCnt);
 		model.addAttribute("paginationInfo", paginationInfo);
 
-		return "sample/egovSampleList";
+		return "example/sample/egovSampleList";
 	}
 
 	/**

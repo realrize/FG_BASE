@@ -5,14 +5,22 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
 	<aop:config>
-		<aop:pointcut id="serviceMethod" expression="execution(* egovframework.example..impl.*Impl.*(..))" />
-
+		<aop:pointcut id="serviceImplMethod" expression="execution(* egovframework.example..impl.*Impl.*(..))" />
 		<aop:aspect ref="exceptionTransfer">
-			<aop:after-throwing throwing="exception" pointcut-ref="serviceMethod" method="transfer" />
+			<aop:after-throwing throwing="exception" pointcut-ref="serviceImplMethod" method="transfer" />
 		</aop:aspect>
 	</aop:config>
 	
 	<bean id="exceptionTransfer" class="egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer">
+		<property name="exceptionHandlerService">
+			<list>
+				<ref bean="defaultExceptionHandleManager" />
+				<ref bean="otherExceptionHandleManager" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="exceptionTransfer2" class="egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer">
 		<property name="exceptionHandlerService">
 			<list>
 				<ref bean="defaultExceptionHandleManager" />

@@ -12,7 +12,7 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
     </context:component-scan>
-
+    
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="webBindingInitializer">
             <bean class="egovframework.example.cmmn.web.EgovBindingInitializer"/>
@@ -43,10 +43,20 @@
             </props>
         </property>
     </bean>
-
-    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
+    
+    <!-- <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="3"
 	    p:viewClass="org.springframework.web.servlet.view.JstlView"
-	    p:prefix="/WEB-INF/jsp/egovframework/example/" p:suffix=".jsp"/>
+	    p:prefix="/WEB-INF/jsp/egovframework/example/" p:suffix=".jsp"/> -->
+
+    <bean id="customResource" class="egovframework.common.CustomViewResolver" p:order="0"
+	    p:viewClass="org.springframework.web.servlet.view.JstlView"
+	    p:prefix="/WEB-INF/jsp/egovframework/" p:suffix=".jsp"/>
+	    
+<!-- 	<bean id="internalResource" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/egovframework/fg/"></property>
+		<property name="suffix" value=".jsp"></property>
+		<property name="order" value="1"></property>
+	</bean> -->
 
     <!-- For Pagination Tag -->
     <bean id="imageRenderer" class="egovframework.example.cmmn.web.EgovImgPaginationRenderer"/>
