@@ -21,10 +21,9 @@ public class CustomViewResolver extends UrlBasedViewResolver implements Ordered 
 		// TODO Auto-generated method stub
 		AbstractUrlBasedView view = buildView(viewName);
 		View viewObj = (View) getApplicationContext().getAutowireCapableBeanFactory().initializeBean(view, viewName);
-		LOGGER.debug("viewObj: "+viewObj);
 		if (viewObj instanceof JstlView) {
-		JstlView jv = (JstlView) viewObj;
-		LOGGER.debug(jv.getBeanName());
+			JstlView jv = (JstlView) viewObj;
+			LOGGER.debug(jv.getBeanName());
 			if (jv.getBeanName().indexOf(".jsp") != -1) {
 			    return null;
 			}

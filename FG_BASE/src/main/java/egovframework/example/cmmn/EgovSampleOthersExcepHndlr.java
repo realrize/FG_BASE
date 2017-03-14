@@ -62,6 +62,7 @@ public class EgovSampleOthersExcepHndlr implements ExceptionHandler {
 	*/
 	@Override
 	public void occur(Exception exception, String packageName) {
+		LOGGER.debug(packageName);
 		LOGGER.debug(" EgovServiceExceptionHandler run...............");
 	}
 

@@ -15,6 +15,8 @@
  */
 package egovframework.fg.controller;
 
+import java.util.HashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,15 +40,13 @@ public class FgSampleController {
 	public ModelAndView selectSampleList(ModelMap model) throws Exception {
 		
 		ModelAndView modelAndView = new ModelAndView();
-		
-		LOGGER.debug("fgSample class");
-		String sampleData = fgSampleService.getBoardList();
-		LOGGER.debug(""+sampleData);
-		model.addAttribute("sampleData", sampleData);
-		modelAndView.addObject(model);
+		LOGGER.debug("controller");
+		HashMap<String, Object> sampleData = fgSampleService.getBoardList(model);
+		LOGGER.debug("BBB");
+		modelAndView.addObject("sampleData", sampleData);
 		modelAndView.setViewName("fg/egovSampleList");
-		
 		LOGGER.debug(modelAndView.getViewName());
+		
 		return modelAndView;
 		
 	}

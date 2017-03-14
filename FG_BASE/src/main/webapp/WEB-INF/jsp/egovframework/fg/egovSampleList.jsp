@@ -59,6 +59,6 @@
 
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
 	abcd
-	${sampleData}
+	${sampleData.resultList}
 </body>
 </html>
