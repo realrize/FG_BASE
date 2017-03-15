@@ -36,19 +36,26 @@ public class FgSampleController {
 	@Autowired
 	private FgSampleService fgSampleService;
 
-	@RequestMapping(value = "/fgSample.do")
+	@RequestMapping(value = "/fgList.do")
 	public ModelAndView selectSampleList(ModelMap model) throws Exception {
 		
 		ModelAndView modelAndView = new ModelAndView();
-		LOGGER.debug("controller");
 		HashMap<String, Object> sampleData = fgSampleService.getBoardList(model);
-		LOGGER.debug("BBB");
 		modelAndView.addObject("sampleData", sampleData);
 		modelAndView.setViewName("fg/egovSampleList");
-		LOGGER.debug(modelAndView.getViewName());
 		
 		return modelAndView;
+	}
+
+	@RequestMapping(value = "/fgInsert.do")
+	public ModelAndView insertBoard(ModelMap model) throws Exception {
 		
+		ModelAndView modelAndView = new ModelAndView();
+		HashMap<String, Object> sampleData = fgSampleService.insertBoard(model);
+		modelAndView.addObject("sampleData", sampleData);
+		modelAndView.setViewName("fg/egovSampleList");
+		
+		return modelAndView;
 	}
 
 }

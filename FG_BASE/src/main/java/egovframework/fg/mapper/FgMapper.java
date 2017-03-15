@@ -39,5 +39,7 @@ import egovframework.rte.psl.dataaccess.mapper.Mapper;
 public interface FgMapper {
 
 	public List<?> selectList(HashMap<String, Object> paramMap) throws Exception;
+	
+	public int insertBoard(HashMap<String, Object> paramMap) throws Exception;
 
 }

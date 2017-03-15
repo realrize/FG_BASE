@@ -8,4 +8,9 @@
 			FROM TB_BOARD
 	</select>
 
+	<insert id="insertBoard" parameterType="hashMap" >
+			INSERT INTO TB_BOARD(ID, CAT_ID, CAT_NM, CONTENT, USE_YN, REG_ID, REG_DT)
+				    VALUES(#{ID}, #{CAT_ID}, #{CAT_NM}, #{CONTENT}, #{USE_YN}, #{REG_ID}, NOW())
+	</insert>
+
 </mapper>
