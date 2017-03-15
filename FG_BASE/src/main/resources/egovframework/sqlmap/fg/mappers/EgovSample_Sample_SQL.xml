@@ -3,14 +3,17 @@
 <mapper namespace="egovframework.fg.mapper.FgMapper">
 
 	<select id="selectList" parameterType="hashMap" resultType="hashMap">
-			SELECT
-				CONTENT
-			FROM TB_BOARD
+		SELECT
+			CONTENT
+		FROM TB_BOARD2
 	</select>
 
 	<insert id="insertBoard" parameterType="hashMap" >
-			INSERT INTO TB_BOARD(ID, CAT_ID, CAT_NM, CONTENT, USE_YN, REG_ID, REG_DT)
-				    VALUES(#{ID}, #{CAT_ID}, #{CAT_NM}, #{CONTENT}, #{USE_YN}, #{REG_ID}, NOW())
+		<selectKey resultType="integer" keyProperty="SEQ" order="BEFORE">
+		    SELECT IFNULL(MAX(ID),0)+1 AS SEQ FROM TB_BOARD2
+		</selectKey>	
+		INSERT INTO TB_BOARD2(ID, CAT_ID, CAT_NM, CONTENT, USE_YN, REG_ID, REG_DT)
+			    VALUES(#{SEQ}, #{CAT_ID}, #{CAT_NM}, #{CONTENT}, #{USE_YN}, #{REG_ID}, NOW())
 	</insert>
 
 </mapper>

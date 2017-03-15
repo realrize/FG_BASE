@@ -33,7 +33,7 @@
 		</property>
 		<property name="patterns">
 			<list>
-				<value>**service.impl.*</value>
+				<value>**service.*</value>
 			</list>
 		</property>
 		<property name="handlers">
@@ -49,7 +49,7 @@
 		</property>
 		<property name="patterns">
 			<list>
-				<value>**service.impl.*</value>
+				<value>**service.*</value>
 			</list>
 		</property>
 		<property name="handlers">

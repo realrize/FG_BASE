@@ -30,24 +30,34 @@ public class FgSampleService{
 	public HashMap<String, Object> insertBoard(HashMap<String, Object> paramMap) throws Exception{
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
-		try{
+			try{
+				paramMap.put("ID", 6);
+				paramMap.put("CAT_ID", 1);
+				paramMap.put("CAT_NM", "공지");
+				paramMap.put("CONTENT", "ABC");
+				paramMap.put("USE_YN", "Y");
+				paramMap.put("REG_ID", "realrize");
+				
+				int result = fgMapper.insertBoard(paramMap);
+				
+				paramMap.put("CAT_ID", 1);
+				paramMap.put("CAT_NM", "공지");
+				paramMap.put("CONTENT", "ABC");
+				paramMap.put("USE_YN", "YN");
+				paramMap.put("REG_ID", "realrize");
+				
+				int result2 = fgMapper.insertBoard(paramMap);
+				
+				LOGGER.debug("paramMap: "+paramMap.get("SEQ"));
+				LOGGER.debug("result: "+result);
+				resultMap.put("resultCode", result);
+			}catch(Exception e){
+				e.printStackTrace();
+				throw e;
+			}
+
 			
-			paramMap.put("ID", 6);
-			paramMap.put("CAT_ID", 1);
-			paramMap.put("CAT_NM", "공지");
-			paramMap.put("CONTENT", "ABC");
-			paramMap.put("USE_YN", "Y");
-			paramMap.put("REG_ID", "realrize");
 			
-			int result = fgMapper.insertBoard(paramMap);
-			
-			LOGGER.debug("resultCode: "+result);
-			resultMap.put("resultCode", result);
-			throw new Exception(); 
-			
-		}catch(Exception e){
-			LOGGER.debug("exception");
-		}
 
 		return resultMap;
 	}
