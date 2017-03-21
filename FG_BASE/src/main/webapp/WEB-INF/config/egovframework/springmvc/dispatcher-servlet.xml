@@ -72,4 +72,12 @@
 
     <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>
     
+    <!-- Tile Definition -->
+    <bean id="tilesConfiguration" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+    	<property name="definitions">
+    		<list>
+    			<value>/WEB-INF/tiles/tiles-definition.xml</value>
+    		</list>
+    	</property>
+    </bean>
 </beans>
