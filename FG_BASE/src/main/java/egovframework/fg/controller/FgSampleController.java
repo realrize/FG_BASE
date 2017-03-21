@@ -42,7 +42,18 @@ public class FgSampleController {
 		ModelAndView modelAndView = new ModelAndView();
 		HashMap<String, Object> sampleData = fgSampleService.getBoardList(model);
 		modelAndView.addObject("sampleData", sampleData);
-		modelAndView.setViewName("fg/egovSampleList");
+		modelAndView.setViewName("fg/egovSampleList.jsp");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/fgHtml.do")
+	public ModelAndView selectHtmlList(ModelMap model) throws Exception {
+		
+		ModelAndView modelAndView = new ModelAndView();
+		HashMap<String, Object> sampleData = fgSampleService.getBoardList(model);
+		modelAndView.addObject("sampleData", sampleData);
+		modelAndView.setViewName("fg/aa.html");
 		
 		return modelAndView;
 	}
