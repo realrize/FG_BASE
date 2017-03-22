@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <title>fg</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="/sample/js/angular/control/fg/fgControl.js"></script>
 </head>
 <body>
 
-<div>
-ccccccc
+<div ng-app="app" ng-controller="MainCtrl">
+ 	Hello, {{ message }}
+ 	<div>
+	 	<customSelectBox></customSelectBox>
+ 	</div>
 </div>
-
 
 </body>
 </html>
