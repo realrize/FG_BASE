@@ -25,7 +25,7 @@ public class CustomViewResolver extends UrlBasedViewResolver implements Ordered 
 			JstlView jv = (JstlView) viewObj;
 			LOGGER.debug(jv.getBeanName());
 			if (jv.getBeanName().indexOf(".jsp") != -1) {
-			    return null;
+				return null;
 			}
 		}
 	return viewObj;

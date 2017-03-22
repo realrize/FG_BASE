@@ -51,10 +51,8 @@ public class FgSampleController {
 	public ModelAndView selectHtmlList(ModelMap model) throws Exception {
 		
 		ModelAndView modelAndView = new ModelAndView();
-		HashMap<String, Object> sampleData = fgSampleService.getBoardList(model);
-		modelAndView.addObject("sampleData", sampleData);
 		modelAndView.setViewName("fg/aa.html");
-		
+		//return new ModelAndView("redirect:/WEB-INF/jsp/egovframework/fg/aa.html");
 		return modelAndView;
 	}
 

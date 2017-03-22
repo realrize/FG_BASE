@@ -40,13 +40,13 @@ public class FgSampleService{
 				
 				int result = fgMapper.insertBoard(paramMap);
 				
-				paramMap.put("CAT_ID", 1);
+/*				paramMap.put("CAT_ID", 1);
 				paramMap.put("CAT_NM", "공지");
 				paramMap.put("CONTENT", "ABC");
 				paramMap.put("USE_YN", "YN");
 				paramMap.put("REG_ID", "realrize");
 				
-				int result2 = fgMapper.insertBoard(paramMap);
+				int result2 = fgMapper.insertBoard(paramMap);*/
 				
 				LOGGER.debug("paramMap: "+paramMap.get("SEQ"));
 				LOGGER.debug("result: "+result);
