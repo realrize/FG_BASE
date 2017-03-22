@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app" >
 <head>
 <meta charset="UTF-8">
 <title>fg</title>
@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<div ng-app="app" ng-controller="MainCtrl">
+<div ng-controller="MainCtrl">
  	Hello, {{ message }}
- 	<div>
-	 	<customSelectBox></customSelectBox>
- 	</div>
+	<custom-select-box selected-value="country"></custom-select-box>
+	{{country}}
+	<sel selected-value="country"></sel>
 </div>
 
 </body>
