@@ -3,5 +3,5 @@
     "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
     "http://tiles.apache.org/dtds/tiles-config.3_0.dtd">
     <tiles-definitions>
-    	<definition name="base.definition" template="/WEB-INF/jsp/tiles/defaultLayout.jsp"></definition>
+    	<definition name="base.definition" template="/WEB-INF/jsp/egovframework/layout/defaultLayout.jsp"></definition>
     </tiles-definitions>
