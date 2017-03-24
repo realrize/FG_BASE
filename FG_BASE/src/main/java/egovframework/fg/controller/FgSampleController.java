@@ -40,7 +40,7 @@ public class FgSampleController {
 	public ModelAndView selectSampleList(ModelMap model) throws Exception {
 		
 		ModelAndView modelAndView = new ModelAndView();
-		HashMap<String, Object> sampleData = fgSampleService.getBoardList(model);
+		HashMap<String, Object> sampleData = null;//fgSampleService.getBoardList(model);
 		modelAndView.addObject("sampleData", sampleData);
 		modelAndView.setViewName("fg/egovSampleList.jsp");
 		

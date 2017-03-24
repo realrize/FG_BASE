@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<title>그레이트1</title>
 		<link rel="stylesheet" type="text/css" href="/css/pc/sample.css" />
-		<script type="text/javascript" src="/js/jquery/jquery-3.1.1.min.js" />
+		<script type="text/javascript" src="/js/jquery/jquery-3.1.1.min.js" ></script>
 	</head>
 	<body>
 		<div class="header_wrap" role="heading">header</div>
